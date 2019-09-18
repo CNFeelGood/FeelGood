@@ -31,7 +31,6 @@
     if (navigationBarTitleColor) {
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:navigationBarTitleColor}];
     }
-    NSLog(@"111");
     [self fg_setupUI];
     [self fg_setupEvent];
     [self fg_setupData];
