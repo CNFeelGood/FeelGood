@@ -10,7 +10,7 @@
 
 @interface FGViewController ()
 
-@property (nonatomic,copy) NSString * naviTitle;
+@property (nonatomic,copy) NSString * fg_title;
 
 @end
 
@@ -19,45 +19,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIImage * leftItemImage = [self leftItemImage];
+    UIImage * leftItemImage = [self fg_leftItemImage];
     if (leftItemImage) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[leftItemImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(back:)];
     }
-    UIColor * navigationBarBgThemeColor = [self navigationBarBgThemeColor];
+    UIColor * navigationBarBgThemeColor = [self fg_navigationBarBgThemeColor];
     if (navigationBarBgThemeColor) {
         self.navigationController.navigationBar.barTintColor = navigationBarBgThemeColor;
     }
-    UIColor * navigationBarTitleColor = [self navigationBarTitleColor];
+    UIColor * navigationBarTitleColor = [self fg_navigationBarTitleColor];
     if (navigationBarTitleColor) {
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:navigationBarTitleColor}];
     }
-    [self setupUI];
-    [self setupEvent];
-    [self setupData];
+    NSLog(@"111");
+    [self fg_setupUI];
+    [self fg_setupEvent];
+    [self fg_setupData];
 }
 
 /**
  子类复写以下3个方法，配置UI，动作，数据相关
  */
-- (void)setupUI{
+- (void)fg_setupUI{
     
 }
-- (void)setupEvent{
+- (void)fg_setupEvent{
     
 }
-- (void)setupData{
+- (void)fg_setupData{
     
 }
 //子类复写此方法后，可根据图片生成leftBarButtonItem，并绑定用户的操作响应方法 back:
-- (UIImage *)leftItemImage{
+- (UIImage *)fg_leftItemImage{
     return nil;
 }
 //navigationbar的背景主题色
-- (UIColor *)navigationBarBgThemeColor{
+- (UIColor *)fg_navigationBarBgThemeColor{
     return nil;
 }
 //navigatoinbar字体色
-- (UIColor *)navigationBarTitleColor{
+- (UIColor *)fg_navigationBarTitleColor{
     return nil;
 }
 
@@ -65,7 +66,7 @@
 
 @implementation FGViewController (NavigationBar)
 
-- (void)back:(id)sender{
+- (void)fg_back:(id)sender{
     if (self.navigationController.viewControllers.count > 1) {
         [self.navigationController popViewControllerAnimated:YES];
     }else if (self.presentingViewController){
@@ -74,11 +75,11 @@
         
     }
 }
-- (void)setNaviTitle:(NSString *)naviTitle{
-    _naviTitle = naviTitle;
-    self.navigationItem.title = naviTitle;
+- (void)setFg_title:(NSString *)fg_title{
+    _fg_title = fg_title;
+    self.navigationItem.title = fg_title;
 }
-- (void)setupRightBarButtonItemWithObject:(id)object{
+- (void)fg_setupRightBarButtonItemWithObject:(id)object{
     if ([object isKindOfClass:[UIButton class]]) {
         [self setupRightBarButtonItemWithButton:object];
     }else if ([object isKindOfClass:[NSString class]]){
@@ -107,22 +108,22 @@
         self.navigationItem.rightBarButtonItem.imageInsets = UIEdgeInsetsMake(0, 5, 0, -5);
     }
 }
-- (void)clickedRightItem:(id)sender{
+- (void)fg_clickedRightItem:(id)sender{
     NSLog(@"在子类中重写clickedRightItem:实现点击方法");
 }
-- (void)setupAutoStatusWithColor:(UIColor *)color{
-    UIView * statusBgView = [[UIView alloc] init];
-    [statusBgView setBackgroundColor:color];
-    [self.view addSubview:statusBgView];
-    //    [statusBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.left.mas_equalTo(self.view);
-    //        make.right.mas_equalTo(self.view);
-    //        make.top.mas_equalTo(self.view);
-    //        make.height.mas_equalTo(20);
-    //    }];
-}
+//- (void)setupAutoStatusWithColor:(UIColor *)color{
+//    UIView * statusBgView = [[UIView alloc] init];
+//    [statusBgView setBackgroundColor:color];
+//    [self.view addSubview:statusBgView];
+//    //    [statusBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//    //        make.left.mas_equalTo(self.view);
+//    //        make.right.mas_equalTo(self.view);
+//    //        make.top.mas_equalTo(self.view);
+//    //        make.height.mas_equalTo(20);
+//    //    }];
+//}
 
-- (void)setupNavigationBarHidden:(BOOL)hidden{
+- (void)fg_setupNavigationBarHidden:(BOOL)hidden{
     if (hidden) {
         if (self.navigationController.navigationBarHidden == NO) {
             [self.navigationController setNavigationBarHidden:YES animated:YES];
