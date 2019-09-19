@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     UIImage * leftItemImage = [self fg_leftItemImage];
     if (leftItemImage) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[leftItemImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(back:)];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[leftItemImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(fg_back:)];
     }
     UIColor * navigationBarBgThemeColor = [self fg_navigationBarBgThemeColor];
     if (navigationBarBgThemeColor) {
@@ -90,16 +90,16 @@
     }
 }
 - (void)setupRightBarButtonItemWithButton:(UIButton *)button{
-    [button addTarget:self action:@selector(clickedRightItem:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(fg_clickedRightItem:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 - (void)setupRightBarButtonItemWithString:(NSString *)string{
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:string style:UIBarButtonItemStyleDone target:self action:@selector(clickedRightItem:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:string style:UIBarButtonItemStyleDone target:self action:@selector(fg_clickedRightItem:)];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
 }
 - (void)setupRightBarButtonItemWithImage:(UIImage *)image{
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(clickedRightItem:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(fg_clickedRightItem:)];
     //    [self.navigationItem.rightBarButtonItem setupImageSize:CGSizeMake(20, 20)];
     if ([UIDevice currentDevice].systemVersion.integerValue < 11) {
         self.navigationItem.rightBarButtonItem.imageInsets = UIEdgeInsetsMake(0, -5, 0, 5);
