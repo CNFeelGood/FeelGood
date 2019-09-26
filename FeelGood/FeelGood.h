@@ -15,5 +15,5 @@ FOUNDATION_EXPORT double FeelGoodVersionNumber;
 FOUNDATION_EXPORT const unsigned char FeelGoodVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <FeelGood/PublicHeader.h>
-#import <FeelGood/FGViewController.h>
+#import <FGUIKit/FGUIKit.h>
 

@@ -21,16 +21,12 @@
 
 /* Begin PBXBuildFile section */
 		F799956C2322565200302A9C /* FeelGood.h in Headers */ = {isa = PBXBuildFile; fileRef = F799956A2322565200302A9C /* FeelGood.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F799957523225C4200302A9C /* FGViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F799957323225C4200302A9C /* FGViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F799957623225C4200302A9C /* FGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F799957423225C4200302A9C /* FGViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F79995672322565200302A9C /* FeelGood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeelGood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F799956A2322565200302A9C /* FeelGood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeelGood.h; sourceTree = "<group>"; };
 		F799956B2322565200302A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F799957323225C4200302A9C /* FGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGViewController.h; sourceTree = "<group>"; };
-		F799957423225C4200302A9C /* FGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				F799956A2322565200302A9C /* FeelGood.h */,
-				F799957223225ABD00302A9C /* viewController */,
 				F799956B2322565200302A9C /* Info.plist */,
 			);
 			path = FeelGood;
-			sourceTree = "<group>";
-		};
-		F799957223225ABD00302A9C /* viewController */ = {
-			isa = PBXGroup;
-			children = (
-				F799957323225C4200302A9C /* FGViewController.h */,
-				F799957423225C4200302A9C /* FGViewController.m */,
-			);
-			path = viewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,7 +72,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F799957523225C4200302A9C /* FGViewController.h in Headers */,
 				F799956C2322565200302A9C /* FeelGood.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,7 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F799957623225C4200302A9C /* FGViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
