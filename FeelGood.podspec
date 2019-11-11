@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FeelGood"             #名称
-  s.version      = "0.0.5"              #版本号
+  s.version      = "0.0.6"              #版本号
   s.summary      = "My Lib"       #简短介绍
   s.description  = <<-DESC
                     My Lib
@@ -22,5 +22,6 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit', 'QuartzCore', 'Foundation'    #所需的framework,多个用逗号隔开
   s.module_name = 'FeelGood'              #模块名称
   s.dependency "FGUIKit"
+  s.dependency "FGData"
 
 end
